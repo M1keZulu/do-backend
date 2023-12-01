@@ -9,4 +9,4 @@ def hello_world():
     return 'Hello, this is a simple Flask API!'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=80)
