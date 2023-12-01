@@ -9,9 +9,9 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  bkstrgrg: 'DO-Project'
-  bkstrg: 'doprojectstrage'
-  bkcontainer: 'tfstate'
+  bkstrgrg: 'dorsg'
+  bkstrg: 'dosag'
+  bkcontainer: 'docon'
   bkstrgkey: 'devpipeline.terraform.tfstate'
 
 stages:
