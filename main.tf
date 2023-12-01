@@ -8,8 +8,8 @@ terraform {
   backend "azurerm" {
     resource_group_name = var.bkstrgrg
     storage_account_name = var.bkstrg
-    container_name = var.bkcontainer
-    key = var.bkstrgkey
+    container_name       = var.bkcontainer
+    key                  = var.bkstrgkey
   }
 }
 
@@ -18,9 +18,18 @@ provider "azurerm" {
   features {}
 }
 
+data "azurerm_resource_group" "existing" {
+  name = "DO_Project"
+}
+
+data "azurerm_location" "existing" {
+  name            = "DO_Project"
+  resource_group_name = data.azurerm_resource_group.existing.name
+}
+
 resource "azurerm_virtual_network" "example" {
   name                = "example-network"
   address_space       = ["10.0.0.0/16"]
-  location            = azurerm.DO_Project.location
-  resource_group_name = azurerm.DO_Project.name
+  location            = data.azurerm_location.existing.name
+  resource_group_name = data.azurerm_resource_group.existing.name
 }
