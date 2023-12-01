@@ -20,7 +20,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resourcegroup"
-  location = "your_location"
+  location = "australiaeast"
 }
 
 resource "azurerm_storage_account" "example" {
