@@ -29,7 +29,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'init'
-            backendServiceArm: 'acr-registry'
+            backendServiceArm: 'do-terraform'
             backendAzureRmResourceGroupName: '$(bkstrgrg)'
             backendAzureRmStorageAccountName: '$(bkstrg)'
             backendAzureRmContainerName: '$(bkcontainer)'
@@ -54,7 +54,7 @@ stages:
              inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'acr-registry'
+              backendServiceArm: 'do-terraform'
               backendAzureRmResourceGroupName: '$(bkstrgrg)'
               backendAzureRmStorageAccountName: '$(bkstrg)'
               backendAzureRmContainerName: '$(bkcontainer)'
@@ -63,12 +63,12 @@ stages:
              inputs:
               provider: 'azurerm'
               command: 'plan'
-              environmentServiceNameAzureRM: 'acr-registry'
+              environmentServiceNameAzureRM: 'do-terraform'
            - task: TerraformTaskV4@4
              inputs:
               provider: 'azurerm'
               command: 'apply'
-              environmentServiceNameAzureRM: 'acr-registry'
+              environmentServiceNameAzureRM: 'do-terraform'
 
 
            
