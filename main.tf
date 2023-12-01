@@ -18,18 +18,21 @@ provider "azurerm" {
   features {}
 }
 
-data "azurerm_resource_group" "existing" {
-  name = "DO_Project"
+terraform {
+  backend "azurerm" {}
 }
-
-data "azurerm_location" "existing" {
-  name            = "DO_Project"
-  resource_group_name = data.azurerm_resource_group.existing.name
+ 
+data "azurerm_client_config" "current" {}
+ 
+resource "azurerm_resource_group" "DO_Project" {
+  name     = "tamops-tf"
+  location = "eastus2"
 }
-
-resource "azurerm_virtual_network" "example" {
-  name                = "example-network"
-  address_space       = ["10.0.0.0/16"]
-  location            = data.azurerm_location.existing.name
-  resource_group_name = data.azurerm_resource_group.existing.name
+ 
+resource "azurerm_storage_account" "tamopssa" {
+  name                     = "tamopssatf"
+  resource_group_name      = azurerm_resource_group.tamopsrg.name
+  location                 = azurerm_resource_group.tamopsrg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
