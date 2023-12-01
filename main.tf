@@ -19,8 +19,8 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resourcegroup"
-  location = "australiaeast"
+  name     = "DO-Project"
+  location = "East US"
 }
 
 resource "azurerm_storage_account" "example" {
