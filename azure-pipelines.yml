@@ -15,7 +15,7 @@ variables:
   bkstrgkey: 'devpipeline.terraform.tfstate'
 
 stages:
-  - stage: 
+  - stage: tfvalidate
     jobs:
     - job: validate
       continueOnError: false
