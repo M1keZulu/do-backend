@@ -18,10 +18,6 @@ provider "azurerm" {
   features {}
 }
 
-terraform {
-  backend "azurerm" {}
-}
- 
 data "azurerm_client_config" "current" {}
  
 resource "azurerm_resource_group" "DO_Project" {
