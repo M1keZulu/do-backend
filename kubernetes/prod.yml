@@ -15,4 +15,4 @@ spec:
       containers:
         - name: app
           imagePullPolicy: Always
-          image: 'doreg.azurcr.io/frontend/production:latest'
+          image: 'doreg.azurecr.io/backend/production:latest'
