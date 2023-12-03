@@ -1,22 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: backend
- labels:
-   app: backend
+  name: backend
 spec:
- replicas: 1
- selector:
-   matchLabels:
-     app: backend
- template:
-   metadata:
-     labels:
-       app: backend
-   spec:
-     containers:
-     - name: app
-       image: doreg.azurecr.io/backend/production:latest
-       imagePullPolicy: Always
-       ports:
-       - containerPort: 8000
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: app
+          imagePullPolicy: Always
+          image: 'doreg.azurcr.io/frontend/production:latest'
