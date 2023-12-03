@@ -16,7 +16,7 @@ spec:
    spec:
      containers:
      - name: app
-       image: doreg.azurecr.io/backend/prod:latest
+       image: doreg.azurecr.io/backend/production:latest
        imagePullPolicy: Always
        ports:
        - containerPort: 8000
