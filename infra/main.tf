@@ -31,14 +31,14 @@ resource "azurerm_storage_account" "tempsag" {
   account_replication_type = "LRS"
 }
 
-resource "azurerm_storage_container" "docon" {
-  name                  = "docon"
+resource "azurerm_storage_container" "tempcon" {
+  name                  = "tempcon"
   storage_account_name  = azurerm_storage_account.tempsag.name
   container_access_type = "private"
 }
 
-resource "azurerm_container_registry" "doreg" {
-  name                     = "doreg"
+resource "azurerm_container_registry" "tempreg" {
+  name                     = "tempreg"
   resource_group_name      = azurerm_resource_group.temprsg.name
   location                 = azurerm_resource_group.temprsg.location
   sku                      = "Basic"
