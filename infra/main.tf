@@ -37,7 +37,7 @@ resource "azurerm_storage_container" "tempcon" {
   container_access_type = "private"
 }
 
-resource "azurerm_container_registry" "tempreg" {
+resource "azurerm_container_registry" "tempcoreg" {
   name                     = "tempreg"
   resource_group_name      = azurerm_resource_group.temprsg.name
   location                 = azurerm_resource_group.temprsg.location
