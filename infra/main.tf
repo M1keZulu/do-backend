@@ -46,7 +46,7 @@ resource "azurerm_container_registry" "tempcoreg" {
 }
 
 
-resource "azurerm_kubernetes_cluster" "example" {
+resource "azurerm_kubernetes_cluster" "tempkube" {
   name                = "tempkube"
   location            = azurerm_resource_group.temprsg.location
   resource_group_name = azurerm_resource_group.temprsg.name
