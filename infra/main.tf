@@ -38,7 +38,7 @@ resource "azurerm_storage_container" "tempcon" {
 }
 
 resource "azurerm_container_registry" "tempcoreg" {
-  name                     = "tempreg"
+  name                     = "tempcoreg"
   resource_group_name      = azurerm_resource_group.temprsg.name
   location                 = azurerm_resource_group.temprsg.location
   sku                      = "Basic"
