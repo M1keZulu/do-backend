@@ -12,13 +12,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.post("/calculate")
 def calculate(data: dict):
     try:
         number1 = data.get("number1")
         number2 = data.get("number2")
         operation = data.get("operation")
+
 
         number1 = float(number1)
         number2 = float(number2)
