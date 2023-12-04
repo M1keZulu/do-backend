@@ -18,29 +18,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "temprsg" {
-  name     = "temprsg"
+resource "azurerm_resource_group" "example-group" {
+  name     = "example-group"
   location = "East US"
-}
-
-resource "azurerm_storage_account" "tempsag" {
-  name                     = "tempsag"
-  resource_group_name      = azurerm_resource_group.temprsg.name
-  location                 = azurerm_resource_group.temprsg.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-}
-
-resource "azurerm_storage_container" "tempcon" {
-  name                  = "tempcon"
-  storage_account_name  = azurerm_storage_account.tempsag.name
-  container_access_type = "private"
-}
-
-resource "azurerm_container_registry" "tempcoreg" {
-  name                     = "tempcoreg"
-  resource_group_name      = azurerm_resource_group.temprsg.name
-  location                 = azurerm_resource_group.temprsg.location
-  sku                      = "Basic"
-  admin_enabled            = true
 }
