@@ -12,6 +12,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.post("/calculate")
 def calculate(data: dict):
     try:
